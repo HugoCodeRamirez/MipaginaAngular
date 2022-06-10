@@ -1,0 +1,11 @@
+.fas{
+    cursor: pointer;
+    transition: .3s all;
+}
+
+.fa-pen:hover{
+    color: blue;
+}
+.fa-trash:hover{
+    color: red;
+}

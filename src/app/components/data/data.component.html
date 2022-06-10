@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-center align-content-center py-5 flex-column">
+    <h1 class="text-center">Adminisitración del sitio</h1>
+    <h5 class="text-center">Contactos</h5>
+</div>
+
+<div class="container">
+    <table *ngIf="listaContactos.length > 0" class="table table-striped table-responsive mb-5">
+        <thead>
+            <tr>
+                <th>correo</th>
+                <th>Nombre</th>
+                <th>Direccion</th>
+                <th>Ciudad</th>
+                <th>Edad</th>
+                <th colspan="2">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let contacto of listaContactos">
+                <td>{{ contacto.correo}}</td>
+                <td>{{ contacto.nombre }}</td>
+                <td>{{ contacto.direccion }}</td>
+                <td>{{ contacto.ciudad }}</td>
+                <td>{{ contacto.edad }}</td>
+                <td colspan="2">
+                    <i class="icono fas fa-pen me-3" [routerLink]="['/actualizar-registro', contacto._id]"></i>
+                    <i class="icono2 fas fa-trash" (click)="eliminarContacto(contacto._id)"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1 *ngIf="listaContactos.length == 0">No hay contactos registrados</h1>
+
+</div>
